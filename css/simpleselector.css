@@ -1,0 +1,19 @@
+/*id selector*/
+#one{
+    color: aquamarine;
+}
+ /*class selector*/
+ .two{
+    background-color: crimson;
+ }
+
+ h1{
+    color: blueviolet;
+ }
+ h1,#one,.two{
+    background-color: cadetblue;
+ }
+
+ *{
+    background-color: violet;
+ }

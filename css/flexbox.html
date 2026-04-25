@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 600px;
+            height: 500px;
+            border: 2px solid gold;
+            display: flex;
+            /*flex-direction: column;
+            flex-wrap: wrap;*/
+            flex-flow: row wrap;
+            /*justify-content: center;
+            align-content: space-evenly;*/
+        }
+        #child1{
+            background-color: rgb(194, 243, 182);
+            width: 100px;
+            height: 100px;
+            /* order:3;
+            align-self: self-end; */
+            /* flex-grow: 1; */
+            flex-shrink: 600;
+        }
+         #child2{
+            background-color: rgb(213, 243, 154);
+            width: 100px;
+            height: 100px;
+            /* order:1;
+            align-self: center; */ 
+            flex-grow: 2; 
+
+        }
+         #child3{
+            background-color: rgb(53, 78, 4);
+            width: 100px;
+            height: 100px;
+            /*order:2;*/
+            align-self: self-start ;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child1">one</div>
+        <div id="child2">two</div>
+        <div id="child3">three</div>
+        <div id="child1">four</div>
+        <div id="child2">five</div>
+        <div id="child3">sixx</div>
+        <div id="child1">seven</div>
+        <div id="child2">eight</div>
+        <div id="child3">nine</div>
+
+    </div>
+</body>
+</html>

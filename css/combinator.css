@@ -1,0 +1,48 @@
+/*Desendent selector*/
+/*
+div h1{
+    color: aqua;
+}
+div p{
+    color: hotpink
+}
+div h2{
+    color: blue;
+} */
+
+
+
+/*Child selector*/
+/*
+div>h1{
+    color: aquamarine;
+}
+div>p{
+    color: yellow;
+}
+div>h2{
+    color: tomato;
+}*/
+
+
+
+/*sibling*/
+section>h1{
+    color: rgb(255, 0, 0);
+}
+div>h1{
+    color: yellowgreen;
+}
+div>p{
+    color: blueviolet;
+}
+section>p{
+    color: darkblue;
+}
+div>h2{
+    color: brown;
+}
+p+h1{
+    background-color: cyan;
+}
+

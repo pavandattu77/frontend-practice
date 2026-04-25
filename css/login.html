@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="styles.css">
+   
+    <title>Netflix watch mivies and web series</title>
+    
+</head>
+<body>
+    <div class="upper">
+        <div class="logo">
+            <a href="#">
+                <img src="img/Logo.png" class="img-logo"/>
+            </a>
+            <style>
+                .right-button {
+                  position: absolute;
+                  right: 20px;  
+                  top: 20px;   
+                  border: #31e509;
+  background-color: #31e509;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  height: 35px;
+  width: 100px; 
+                }
+              </style>
+              <div>
+                
+                <button class="right-button" onclick="window.location.href='index.html'">Home</button>
+              
+              </div>
+        </div>
+        <div class="login-div">
+            <form class="login">
+                <h1>Sign In</h1>
+                <div class="input-text">
+                    <input type="text" id="inputEmail" name="email" placeholder="Email or phone number" />
+                    <div class="warning-input" id="warningEmail">
+                        Please enter a valid email or phone number.
+                    </div>
+                </div>
+                
+                <div class="input-text">
+                    <input type="password" id="inputPassword" name="password" placeholder="Password" />
+                    <div class="warning-input" id="warningPassword">
+                        Your password must contain between 4 and 60 characters.
+                    </div>
+                </div>
+                
+                <div>
+                    <button class="signin-button" onclick="signin()">Sign In</button>
+                </div>
+                <div class="remember-flex">
+                    <div>
+                        <input type="checkbox">
+                        <label class="color_text">Remember me</label>
+                    </div>
+                    <div class="help">
+                        <a class="color_text" href="#">Need help?</a>
+                    </div>
+                </div>
+                
+                <div class="new-members">
+                    <p>Don't have an account</p>
+                     <a href="signup.html" class="signup-link">Sign up now</a>.
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-width">
+           
+            <div>
+                <ul class="bottom-flex">
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Help Center
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Terms of Use
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Privacy
+                        </a>
+                    </li>
+                   
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+    
+</body>
+</html>

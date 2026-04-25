@@ -1,0 +1,193 @@
+HTML
+block element: it occupies entire view page
+Inline elements: only occupies required space 
+
+CSS
+syntax:
+selector{
+	   property1:val1;
+	   property2:val2;
+}
+
+3 ways to add css to html file
+Inline css: In a line we add css only in a particular line only using style attribute
+ 	Ex:-<h1 style="color: antiquewhite;">Inline css</h1>
+Internal css: We will write the css in the html tag only 
+	  </head>
+	     <style>
+    	         h1{
+        	      color:tomato;
+      	      	      background-color: crimson;
+    			}
+	     </style>
+External css: We write the css in the new css file and link the html and the css
+		In html
+		    <head>
+     			<link rel="stylesheet" href="style.css">
+		In css
+			h3{
+ 			     color: chocolate;
+			   }
+
+Types of selectors:
+1.simple selector
+2.combination selector
+3.pseudo-class selectors
+4.pseudo-element selectors
+5.Attribute selectors
+
+
+1.Simple selectors: used to select an element based on attributes like id or class or based on tag name, grouping and universal selectors.
+id(#): it is used to target uniquely one single element from the web page.
+class(.):it is used to target multiple elements to which common styles need to be applied.
+Tagname: this selector is used to target the elements based on 
+
+
+
+2.Combinator selector: these are used to target elements based on relationship with other elements
+	the relationship can be either parent or child or sibling relationships
+Types:
+descendent selector(space): it is used to target direct and indirect child of given parent tag
+child selector(>): it is used to target direct child of a given parent tag
+adjacent sibling
+
+
+
+3.pseudo-class selectors: these are used to target elements whenever they are at a special state.
+		Special state might be hovering upon elements,active and visited state links etc.
+Denoted by(:)
+syntax:
+       selector:pseudo-class{
+				property:value;
+			     }
+1.(:hover): it is used to define styles for an element when the cursor is moved upon it 
+2.visited:used to define styles for anchor tag after line has been visited
+3.active:used to define styles for anchor tag whenever it is in active
+4.focus:used to apply styles for an input field when clicked upon it
+5.last-child,first-child,nth-child: used to select a particular element from the given parent element
+
+
+
+
+4.pseudo-element selectors: to target specified portion of the content
+	Denoted by (::)
+syntax:
+	selector::pseudo-element{
+				property:value;
+				}
+Types:
+1.first-letter: used to target the first letter of the content from a given tag
+2.first-line: used to target the first line of a content from a given tag
+3.selection: used to style the content when the cursor is dragged upon it
+4.before: used to place the content before the targeted html element
+5.after: used to place the content after the targeted html element 
+
+
+
+
+5.Attribute selectors: mainly used to target the elements based on any type of attributes 
+	Denoted by([])
+Types:
+1.[attributes]: used to target elements upon name of the attribute
+2.[attribute="value"]: used TO target the elements based on attribute along with it's value
+
+
+Box-Model: it is a concept in css that describes the area taken by the element on a web page
+It is divided into four parts:
+1.Border:  border-width
+	   border-style
+	   border-color
+	   border-radius
+2.Margin:  space outside the border
+	margin-top
+	margin-right
+	margin-left
+	margin-bottom
+	margin:10px
+		for all sides
+	margin:10px 20px  30px   40px
+          ||  :top  right bottom left
+	margin:10px 20px         30px
+	  ||  :top  left & right bottom
+	margin:10px         20px
+	  ||  :top & bottom right & left
+
+3.Padding:  inside space 
+	    space between bottom and content
+		padding-top
+		padding-right
+		padding-bottom
+		padding-left
+		padding:10px
+		padding:10px 20px 30px 40px
+		padding:10px 20px 30px
+		padding:10px 20px
+
+4.Content:  The text we are entering 
+
+
+	
+Flex box:
+	PARENT/FLEX CONTAINER PROPERTIES:
+	display: flex
+	Flex-direction: row| column| row-reverse| column-reverse	
+	Flex-warp: warp| no-warp| warp-reverse
+	Flex-flow: "flex-direction"||"flex-warp"
+	Justify-content: flex-start| flex-end| center| space-between| space-around| space evenly
+
+	CHILD\FLEX ITEMS PROPERTIES:
+	border: integer
+	align-self: flex-start| flex-end| center| auto
+	flex-grow: number
+	
+
+
+Navigation bars:
+	Horizontal
+	Vertical
+	Positions:
+		Static- Default one
+		Fixed- is positioned related to the view point
+		Absolute- is positioned related to the nearest positioned ancestor
+		Sticky- is positioned based on the user's scroll position
+		Relative- it is positioned based on it's normal position
+
+The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).
+An element can have a position or negative
+
+
+Set the display to grid:
+	display: grid;
+
+To set number of rows and columns and corresponding we use
+	grid-template-columns: 200px 1fr 2fr; 
+	grid-template-rows: auto 100px;
+
+	1fr - fractional unit
+
+	justify-items
+	justify-content
+	align-items
+	align-content
+
+	grid-gaps:
+	1. row-gap
+	2. column-gap
+	3. gap: row-gap column-gap
+
+If we want to start any item at some column and end it at some column
+we use
+	grid-column-start: startColumn;
+	grid-column-end: endColumn1;
+Similarly for grid rows-content
+
+
+
+
+
+
+
+
+
+
+

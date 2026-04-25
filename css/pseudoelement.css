@@ -1,0 +1,17 @@
+p::first-letter{
+    color: aqua;
+    font-size:xx-large;
+}
+p::first-line{
+    color: rgb(255, 0, 0);
+}
+p::selection{
+    color: aquamarine;
+    background-color: antiquewhite;
+}
+p::before{
+    content:"😶‍🌫️";
+}
+p::after{
+    content:"😊";
+}

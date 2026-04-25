@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJAX Example</title>
+</head>
+<body>
+  <div id="demo">
+    <h1>This is AJAX</h1>
+    <p>Let the AJAX change the text...</p>
+    <button onclick="loadDoc()">Change Text</button>
+  </div>
+
+  <script>
+    function loadDoc() {
+      const x = new XMLHttpRequest();
+
+      x.onload = function() {
+        document.getElementById("demo").innerHTML = this.responseText;
+      };
+
+      x.open("GET", "ajax.txt"); 
+      x.send();
+    }
+  </script>
+</body>
+</html>

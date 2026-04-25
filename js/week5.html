@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .star{
+            font-size: large;
+            cursor: pointer;
+            color: aqua;
+        }
+        .star.selected{
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+   <h2>Star Rating System</h2>
+    <span class="star">&#9733</span>
+    <span class="star">&#9733</span>
+    <span class="star">&#9733</span>
+    <span class="star">&#9733</span>
+    <span class="star">&#9733</span>
+    <p id="result">Your Rating: 0</p>
+     <script>
+       $(document).ready(function(){
+    $(".star").click(function(){
+        let rating = $(".star").index(this) + 1;
+
+        $(".star").removeClass("selected");
+
+        $(".star").slice(0, rating).addClass("selected");
+
+        $("#result").text("Your Rating: " + rating);
+    });
+});
+
+     </script>
+</body>
+</html>

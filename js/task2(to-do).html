@@ -1,0 +1,196 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            height: 40px;
+            width: 500px;
+            border: 2px white ;
+            border-radius: 10px;
+        }
+        .box{
+            height: 60px;
+            width: 460px;
+            background-color: violet;
+            color: aliceblue;
+            border: 2px white;
+            border-radius: 10px;
+            text-align: start;         
+            justify-content: space-between;
+            align-items:center;
+            padding: 10px;
+            margin-top: 50px;
+        }
+        .button{
+            height: 40px;
+            border: 2px white ;
+           border-radius: 10px;
+            background-color: aliceblue;
+            color: black;
+        }
+    </style>
+</head>
+<body bgcolor="lightgreen">
+    <center>
+        <h1>To-Do List</h1>
+        <input type="text" id="one" placeholder="Enter tasks" style="margin-top: 45px;">
+        <button class="button">Add</button>     
+        <div class="box">Task1
+            <button class="button" style="margin-left: 320px;">Edit</button>
+            <button class="button">Delete</button>
+        </div></p>
+    </center>
+    <script>
+         let inp=document.querySelector("input[type='text']")
+         let bu=document.querySelector("button")
+         let task=document.querySelector(".box")
+                bu.addEventListener("click",function(){
+             let newtask = document.createElement("div");
+             newtask.className = "box";
+             newtask.innerHTML = inp.value;
+             newtask.style.margin="10px";
+             task.appendChild(newtask)
+      
+             let add = document.createElement("button");
+              add.innerHTML = "Edit";
+              add.style.marginLeft = "200px";
+              newtask.appendChild(add);
+
+              let dlt= document.createElement("button");
+              dlt.innerHTML = "Delete";
+              newtask.appendChild(dlt);
+            
+         });
+       
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            font-family: Arial, sans-serif;
+        }
+
+        #one {
+            height: 40px;
+            width: 500px;
+            border: 2px white;
+            border-radius: 10px;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+
+        .button {
+            height: 40px;
+            border: 2px white;
+            border-radius: 10px;
+            background-color: aliceblue;
+            color: black;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .box {
+            min-height: 60px;
+            width: 500px;
+            background-color: violet;
+            color: aliceblue;
+            border: 2px white;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .taskContainer {
+            margin-top: 30px;
+        }
+
+        .taskText {
+            flex: 1;
+        }
+
+        .btnGroup {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>To-Do List</h1>
+        <input type="text" id="one" placeholder="Enter tasks">
+        <button class="button" id="addButton">Add</button>
+
+         
+        <div class="taskContainer" id="taskContainer"></div>
+    </center>
+
+    <script>
+        const input = document.getElementById("one");
+        const addBtn = document.getElementById("addButton");
+        const taskContainer = document.getElementById("taskContainer");
+
+        addBtn.addEventListener("click", function () {
+            const taskText = input.value.trim();
+            if (taskText === "") return;
+
+            // Create task box
+            const taskBox = document.createElement("div");
+            taskBox.className = "box";
+
+            const taskContent = document.createElement("span");
+            taskContent.className = "taskText";
+            taskContent.textContent = taskText;
+
+            const btnGroup = document.createElement("div");
+            btnGroup.className = "btnGroup";
+
+            // Edit button
+            const editBtn = document.createElement("button");
+            editBtn.textContent = "Edit";
+            editBtn.className = "button";
+
+            editBtn.addEventListener("click", function () {
+                const newText = prompt("Edit your task:", taskContent.textContent);
+                if (newText !== null && newText.trim() !== "") {
+                    taskContent.textContent = newText.trim();
+                }
+            });
+
+            // Delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "button";
+
+            deleteBtn.addEventListener("click", function () {
+                taskContainer.removeChild(taskBox);
+            });
+
+            // Assemble everything
+            btnGroup.appendChild(editBtn);
+            btnGroup.appendChild(deleteBtn);
+            taskBox.appendChild(taskContent);
+            taskBox.appendChild(btnGroup);
+            taskContainer.appendChild(taskBox);
+
+            // Clear input
+            input.value = "";
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body bgcolor="darkblue">
+    <center>
+    <input type="number" placeholder="Enter the guess number" style="margin-block: 200px; margin-bottom: 50px;"><br>
+    <button style="margin-bottom: 10px; color: white;  box-shadow:2px 2px 2px 2px rgb(10, 203, 26); background-color: green; border: 2px solid green; height: 60px; width: 80px; ">Guess</button><br>
+    <h6 style="color: aliceblue;">Attemps:<h4 style="color: aliceblue;">5</h4></h6>
+    <h5 style="color: white;">Let's start</h5>
+    <button style="margin-top: 20px;  color: white; box-shadow:2px 2px 2px 2px rgb(255, 0, 0); background-color: rgb(109, 5, 5); height: 70px; width: 90px;">  Try again</button>
+    </center>
+    <script>
+        const guessButton = document.querySelector("button");
+        const inputField = document.querySelector("input");
+        const message = document.querySelector("h5");
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        guessButton.addEventListener("click", () => {
+            const userGuess = parseInt(inputField.value);
+            if (userGuess === randomNumber) {
+                message.textContent = "Congratulations! You guessed the number!";
+                message.style.color = "green";
+            } else if (userGuess < randomNumber) {
+                message.textContent = "Too low! Try again.";
+                message.style.color = "orange";
+            } else {
+                message.textContent = "Too high! Try again.";
+                message.style.color = "red";
+            }
+        });
+        const tryAgainButton = document.querySelector("button:nth-of-type(2)");
+        tryAgainButton.addEventListener("click", () => {
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            inputField.value = '';
+            message.textContent = "Let's start";
+            message.style.color = "white";
+        });
+    </script>
+</body>
+</html>
+<!-- 
+//startup ai resourse gadher
+//personal learning assistant -->

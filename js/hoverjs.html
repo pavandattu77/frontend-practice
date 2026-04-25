@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>This is paragraph, For seeing Event
+        response<br><span id="hover">Hover on Me!</span>
+    </p>
+    <script>
+        let a = document.getElementById("hover");
+        a.addEventListener("mouseover",()=>
+    {
+        document.body.style.backgroundColor="aqua"
+        a.style.fontSize="100px";
+    })
+     a.addEventListener("mouseout",()=>
+    {
+        document.body.style.backgroundColor="yellow"
+        a.style.fontSize="100px";
+    })
+    </script>
+</body>
+</html>

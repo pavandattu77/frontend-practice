@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // This is a simple to-do list application using JavaScript
+    <center>
+        <h1>To-Do List</h1>
+        <input type="text" id="one" placeholder="Enter tasks"></input>
+        <button id="button">Add</button>
+        <div id="taskList"></div>
+    </center>
+    <script>
+        let inputField = document.getElementById("one");
+        let addButton = document.getElementById("button");
+        let taskList = document.getElementById("taskList");
+
+        addButton.addEventListener("click", function() {
+            let taskText = inputField.value.trim();
+            if (taskText === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            let taskDiv = document.createElement("div");
+            taskDiv.style.display = "flex";
+            taskDiv.style.justifyContent = "space-between";
+            taskDiv.style.alignItems = "center";
+            taskDiv.style.marginBottom = "10px";
+
+            let taskContent = document.createElement("span");
+            taskContent.textContent = taskText;
+
+            let editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.addEventListener("click", function() {
+                let newTaskText = prompt("Edit your task:", taskContent.textContent);
+                if (newTaskText !== null) {
+                    taskContent.textContent = newTaskText.trim();
+                }
+            });
+
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", function() {
+                taskList.removeChild(taskDiv);
+            });
+
+            taskDiv.appendChild(taskContent);
+            taskDiv.appendChild(editButton);
+            taskDiv.appendChild(deleteButton);
+            taskList.appendChild(taskDiv);
+
+            inputField.value = ""; // Clear the input field
+        });
+        // Optional: Add a keypress event to allow adding tasks with Enter key
+        inputField.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                addButton.click(); // Trigger the click event of the Add button
+            }
+        });
+        
+        </script>
+</body>
+</html>

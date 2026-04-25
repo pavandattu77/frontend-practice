@@ -1,0 +1,36 @@
+DOM and DOM Manipulation in js
+The Document Object Model (DOM) is a programming interface for web documents.
+It represents the sturcture of an HTML or XML file as a tree of objects.
+Js can interact with the DOM to dynamically change the content, structure, and style of a wedpage.
+With the HTML DOM 
+The HTMLDOM . When wedpage is loaded 
+
+
+JS can change all the  HTML elements in the page
+                        Html attributes in the page
+                        CSS styles in the page
+        remove existing HTML elements and attributes in the page
+        react to all elements existing HTML events in the page 
+        add new HTML elements and attributes in the page
+        create new HTML events in the page
+
+
+DOM structure 
+The DOM represents an HTML documents as a tree
+
+DOM manipulation with js
+js provides various methods to interact with and modify the DOM.
+
+1.Selecting  elements 
+To manipulate an element, you must first select it
+
+Method Description Example
+document.getElementById() Select the elements by its id
+document.getElementByTagName()
+
+document.querySelector()
+Selects the first matching elements used 
+
+3.Changing styles
+Modify an element's CSS styles.
+document.getElementById("heading).style.head

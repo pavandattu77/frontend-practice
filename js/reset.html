@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Reset Form</h2>
+    <form id="myForm" onreset="handleReset()">
+        Name: <input type="text" name="username" required>
+        <input type="reset" value="Reset Form">
+    </form>
+
+    <script>
+        function handleReset(){
+            alert("Form has been reset to defalut value")
+        }
+    </script>
+</body>
+</html>

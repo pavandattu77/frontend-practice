@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Smart Notes App with Rich Features and File Suppot
+Problem Statement:
+Design and build a fully functional, responsive Noles Applicalion thal allows users to creadle, manage, and customize their noles. The app should support lext noles, image allacthments, seancthfileing, and ith formating with highighters, Users must be able to edit, delele, and austomice thenes, and he ap shrould
+offer options to importlexport noles in muliple fomals. -->
+    <h1>Smart Notes App</h1>
+    <p>Welcome to the Smart Notes App! Here you can create, manage, and customize your notes with rich features.</p>
+    <input type="search">
+    <div id="note-container">
+        <h2>Your Notes</h2>
+        <ul id="note-list">
+            <!-- Notes will be dynamically added here -->
+        </ul>
+        <button id="add-note">Add Note</button>
+    </div>
+    <div id="note-editor" style="display: none;">
+        <h2>Edit Note</h2>
+        <textarea id="note-content" rows="10" cols="50"></textarea>
+        <button id="save-note">Save Note</button>
+        <button id="cancel-edit">Cancel</button>        
+    </div>      
+    <div id="note-actions" style="display: none;">
+        <button id="delete-note">Delete Note</button>
+        <button id="export-note">Export Note</button>
+        <button id="import-note">Import Note</button>
+    </div>  
+    <div id="note-formatting" style="display: none;">
+        <button id="highlight-text">Highlight Text</button>
+        <button id="bold-text">Bold Text</button>
+        <button id="italic-text">Italic Text</button>
+        <button id="underline-text">Underline Text</button>
+        <button id="add-image">Add Image</button>
+    </div>
+    <div id="file-attachments" style="display: none;">
+        <h2>File Attachments</h2>
+        <input type="file" id="file-input" multiple>
+        <button id="upload-files">Upload Files</button>
+        <ul id="file-list">
+            <!-- File attachments will be listed here -->
+        </ul>
+    </div>
+    <div id="search-results" style="display: none;">
+        <h2>Search Results</h2>
+        <ul id="results-list">
+            <!-- Search results will be displayed here -->
+        </ul>
+    </div>
+    <div id="note-themes" style="display: none;">
+        <h2>Customize Themes</h2>
+        <button id="theme-light">Light Theme</button>
+        <button id="theme-dark">Dark Theme</button>
+        <button id="theme-colorful">Colorful Theme</button>
+    </div>
+    <div id="note-history" style="display: none;">
+        <h2>Note History</h2>
+        <ul id="history-list">
+            <!-- Note history will be displayed here -->
+        </ul>
+    </div>
+    <div id="note-settings" style="display: none;">
+        <h2>Settings</h2>
+        <label for="font-size">Font Size:</label>
+        <input type="number" id="font-size" value="16">
+        <label for="line-height">Line Height:</label>
+        <input type="number" id="line-height" value="1.5">
+        <button id="save-settings">Save Settings</button>
+        <button id="reset-settings">Reset Settings</button> 
+    </div>  
+    <div id="note-help" style="display: none;">
+        <h2>Help</h2>
+        <p>For assistance, please refer to the user manual or contact support.</p>
+
+        <button id="contact-support">Contact Support</button>
+    </div>
+    <div id="note-feedback" style="display: none;">
+        <h2>Feedback</h2>
+        <textarea id="feedback-content" rows="5" cols="50" placeholder="Your feedback..."></textarea>
+        <button id="submit-feedback">Submit Feedback</button>
+        <button id="cancel-feedback">Cancel</button>
+    </div>
+    <div id="note-analytics" style="display: none;">
+        <h2>Analytics</h2>
+        <p>Total Notes: <span id="total-notes">0</span></p>
+        <p>Most Active Note: <span id="most-active-note">None</span></p>
+        <p>Last Edited Note: <span id="last-edited-note">None</span></p>
+        <p>Most Used Tags: <span id="most-used-tags">None</span></p>
+        <p>Average Note Length: <span id="average-note-length">0</span> characters</p>
+    </div>
+    <div id="note-shortcuts" style="display: none;">
+        <h2>Shortcuts</h2>
+        <ul>
+            <li><strong>Ctrl + N:</strong> New Note</li>
+            <li><strong>Ctrl + S:</strong> Save Note</li>
+            <li><strong>Ctrl + D:</strong> Delete Note</li>
+            <li><strong>Ctrl + F:</strong> Search Notes</li>
+            <li><strong>Ctrl + E:</strong> Export Note</li>
+            <li><strong>Ctrl + I:</strong> Import Note</li>
+        </ul>
+    </div>
+    <div id="note-privacy" style="display: none;">
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. We do not share your notes with third parties without your consent.</p>
+        <button id="accept-privacy">Accept</button>
+        <button id="decline-privacy">Decline</button>
+    </div>
+    <div id="note-terms" style="display: none;">
+        <h2>Terms of Service</h2>
+        <p>By using this app, you agree to our terms of service.</p>
+        <button id="accept-terms">Accept</button>
+        <button id="decline-terms">Decline</button>
+    </div>
+    <div id="note-logout" style="display: none;">
+        <h2>Logout</h2>
+        <p>Are you sure you want to logout?</p>
+        <button id="confirm-logout">Yes, Logout</button>
+        <button id="cancel-logout">Cancel</button>
+    </div>
+    <div id="note-login" style="display: none;">
+    <script>
+        document.getElementById('add-note').addEventListener('click', function() {
+            document.getElementById('note-editor').style.display = 'block';
+            document.getElementById('note-content').value = '';
+            document.getElementById('note-actions').style.display = 'none';
+        });
+
+        document.getElementById('save-note').addEventListener('click', function() {
+            const noteContent = document.getElementById('note-content').value;
+            if (noteContent) {
+                const noteList = document.getElementById('note-list');
+                const newNote = document.createElement('li');
+                newNote.textContent = noteContent;
+                noteList.appendChild(newNote);
+                document.getElementById('note-editor').style.display = 'none';
+                document.getElementById('note-actions').style.display = 'block';
+            }
+        });
+
+        document.getElementById('cancel-edit').addEventListener('click', function() {
+            document.getElementById('note-editor').style.display = 'none';
+        });
+        document.getElementById('delete-note').addEventListener('click', function() {
+            const noteList = document.getElementById('note-list');
+            if (noteList.lastChild) {
+                noteList.removeChild(noteList.lastChild);
+            }
+        });
+    </script>
+</body>
+</html>

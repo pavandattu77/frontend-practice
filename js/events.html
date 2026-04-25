@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- inline event Handling -->
+    <!-- <button onclick="alert('button clicked')">button</button>
+    <button onmousedown="alert('button clicked')">button</button>   // not recommended -->
+    <button id="btn">Click me</button>
+    <script>
+        // const btn=document.getElementById("btn")
+        // btn.onclick=function(){
+        //     alert("First Handler")
+        // }
+        // btn.onclick=function(){
+        //     alert("Second Handler")
+        // }
+        const btn=document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            alert("first handler")
+            console.log("Welcome using js,")
+        })
+        btn.addEventListener("click",()=>{
+            btn.style.backgroundColor="yellow";
+            document.body.style.backgroundColor="red";
+        })
+    </script>
+</body>
+</html>

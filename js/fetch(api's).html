@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h2></h2>
+    <button>Generate Joke</button>
+   
+    <script>
+        
+const api=()=>{
+    fetch("https://v2.jokeapi.dev/joke/Programming")
+    .then((res)=>res.json()).then(data=>{
+        console.log(data)
+    })
+}
+api();
+
+        const api_new=async()=>{
+                const res=await fetch("https://v2.jokeapi.dev/joke/Programming")
+                let data=await res.json()
+                console.log(data)
+        }
+        api_new();
+        //to print joke on wedpage
+        const api_new2=async()=>{
+            const res=await fetch("https://v2.jokeapi.dev/joke/Programming")
+            let data=await res.json();
+           // h2.innerText=data.joke || data.setup;
+             if(data.type==="single"){
+                document.querySelector("h2").innerText=data.joke
+            }else{
+                document.querySelector("h2").innerText=data.setup
+            } 
+        }
+        document.querySelector("button").addEventListener("click",api_new2)
+</script>
+</body>
+</html>

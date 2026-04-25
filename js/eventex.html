@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Two Numbers</h2>
+    <label>EnterA:<input type="text" id="inputA"></label>
+    <label>EnterB:<input type="text" id="inputB"></label>
+    <button id="submitbtn">Submit</button>
+    <p>Result:<span id="resultLabel">0</span></p>
+    <script>
+        const a=document.getElementById("inputA")
+        a.addEventListener("click",()=>{ 
+              a.style.backgroundColor="blue"
+        })
+        const b=document.getElementById("inputB")
+        b.addEventListener("click",()=>{   
+              b.style.backgroundColor="yellow"
+        })
+        const c=document.getElementById("submitbtn")
+        c.addEventListener("click",()=>{
+             const x=parseInt(inputA.value);
+             const y=parseInt(inputB.value);
+             const sum=x+y;
+             resultLabel.textContent =sum;
+        });
+    </script>
+</body>
+</html>

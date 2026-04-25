@@ -1,0 +1,18 @@
+Event"
+    An EVent is any interaction the user performs with the web page
+    like=click,move,pressed,submission
+    Web rowser does generate events like (click,submit,keydown) when something is done.
+
+Event Handling Work flow:
+
+Event Source: An object where the event organises
+Event object: In js, when an event occurs, the browser creates an object representing that event.
+ This is 
+Event listener(Handler):code that listens for events(often a method or a function)
+Event dispather(Loop):
+
+Event Handling:
+Wed browser generates event when users interact with the page, HTML  elements can 
+& js is used to handle and respond to those events
+
+Event Handling Steps:

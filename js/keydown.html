@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keydown Event</title>
+</head>
+<body onkeydown="showKey(event)">
+        <!-- inline-event Handling
+        <button onmousedown="alert('button clicked')" -->
+        <h2>Press any Key on your keyboard</h2>
+        <p id="output">Waiting for you click the KEY....</p>
+        <script>
+            function showKey(event){
+                document.getElementById("output").textContent="You pressed: " + event.key;
+            }
+        </script>
+</body>
+</html>

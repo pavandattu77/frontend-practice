@@ -1,0 +1,172 @@
+It's a popular language 
+JS is not only used as a frontend technology but also used as a backend technology
+it's used to ass functionalities to a web page
+First Brendon Eich developed a scripting language called echo later named as live script
+To make it a open source they handed it to ECMA(European computer manufacturing Association) in year 1997 also called as ECMA script
+
+Key features:
+ 1. It is a scripting language because each and every code written in JS can be read, analyse and execute
+ 2. It is a weekly typed language - if ; missing then also no error occurs
+ 3. It is dynamically typed language - if declare a variable and assign and store any type of data, later we can assign any value it might be string, Boolean
+ 4. It is synchronous single threaded/interpreted language 
+ 5. It's high level programming language 
+
+Two ways to add JS to html:
+	Internal JS 
+	External JS
+ 
+Internal JS :
+script tag
+	<body>
+		<script>
+			//jsbody
+		</script>
+	</body>
+
+External JS :
+	<body>
+		<script src="psth of js file"></script>
+	</body>
+
+Variables:
+var
+let
+const
+
+Operators:
+	Arithmetic 
+	Comparision
+	Logical
+	Assignment
+	Bitwise
+	Ternary
+Arithmetic:
+	Add		2+4
+	Subtract	2-4
+	Multiply	2*4
+	Divide	 	2/4
+	Modulus		2%4
+	Negate		-(2)
+Comparison:
+	a==b
+	a!=b
+	a<b
+	a>b
+	a<=b
+	a>=b
+Logical:
+	a&&b 	And
+	a||b	Or
+	!b	Not
+Assignment:
+	=
+	+=
+	-=
+	*=
+	/=
+	%=
+	<<=
+	>>=
+	&=
+	^=
+	|=
+	!=
+Bitwise:
+	&
+	|
+	~
+	^
+	<<
+	>>
+Ternary:
+ 	Condition?expression1:expression2
+	Condition? True: False
+
+
+
+
+Conditional statements:
+ if:
+	to specify a block of code to be executed. if the specified condition is true
+	Syntax:
+		if(condition){
+			//Statements to be executed
+		}
+ if else:
+	if(condition){
+		//Statements to be executed
+	}
+	else{
+		//Statements to be executed
+	}
+ if else if else:
+	if(condition){
+		//code
+	}
+	else if(condition){
+		//code
+	}
+	else{
+		//code
+	}
+Nested if:
+	if(condition){
+		//code
+		if(condition{
+			//code
+		}
+	}
+Switch:
+	case1:
+		//code
+		break;
+	case2:
+		//code
+		break;
+	case3:
+		//code
+		break;
+	default:
+		//code
+		break;
+
+
+For:
+	syntax: for(initialization; condition; increment) {}
+		for(initlization; CSSConditionRule; increment){ 
+			    //code to be executed
+		}
+
+Do while:
+do{
+    //code to be executed
+}
+while(condition);
+
+
+A function is a block of code to do a particular task
+FUNCTION DECLARATION:
+	function functionName(parrameter1,parameter2.....parametern){
+		body;
+		return Value;
+	}
+
+function Expression :Assigning function to a variable
+1.named function (function decleration)
+2.anonymous function (function expression)
+3.immediately invoke function expression(IIFE)
+4.Arrow function
+
+
+
+
+
+
+
+
+
+
+
+
+
+

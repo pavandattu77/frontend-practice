@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="box">
+        <div>Name: <input type="text" name="username" placeholder="enter the name"  ></div><br>
+        <div>email: <input type="email" name="email" placeholder="enter email" ></div><br>
+        <div>Password: <input type="password" name="password" placeholder="password" ></div><br>
+        <div>Confirm password: <input type="password" name="confirm_password" placeholder="confirm the password " ></div><br>
+        <input type="submit" value="register">
+        <input type="reset" value="reset">
+    </form>
+    <script>
+        const form = document.getElementById("box");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            if(!data.username || !data.email || !data.password || !data.confirm_password) {
+                alert("Please fill in all fields!");
+                return;
+            }
+            if(!data.username) {
+                alert("Please fill the name");
+                return;
+            }
+            if(!data.email) {
+                alert("Please fill email");
+                return;
+            }
+            if(!data.password || !data.confirm_password) {
+                alert("Please fill passwords!");
+                return;
+            }
+            if (data.password !== data.confirm_password) {
+                alert("Passwords do not match!");
+                return;
+            }
+            else if (data.username.length < 3) {
+                alert("Username must be at least 3 characters long!");
+                return;
+            }
+            else if (data.password.length < 6) {
+                alert("Password must be at least 8 characters long!");
+                return;
+            }
+            else if (!data.email.includes("@")) {
+                alert("Please enter a valid email address!");
+                return;
+            }          
+            
+            alert("Form submitted successfully!");
+            console.log(data); 
+        });
+
+    </script>
+
+</body>
+</html>

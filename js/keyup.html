@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onkeyup="showReleasedKey(event)">
+    <h2>Release any key</h2>
+    <p id="result">Waiting for key release....</p>
+    <div id="box"></div>
+    <script>
+       
+        function showReleasedKey(event){
+            document.getElementById("result","a").textContent="You released: " + event.key;
+            if(event.key === "g"){
+                document.body.style.backgroundColor="green";
+            }
+            else if(event.key === "r"){
+                document.body.style.backgroundColor="red";
+            }
+            else if(event.key === "p"){
+                document.body.style.backgroundColor="violet";
+            }
+            else if(event.key === "b"){
+                document.body.style.backgroundColor="blue";
+            }
+            else if(event.key ==="Enter"){
+                let a=document.getElementById("box")
+                document.body.appendChild(a)
+                a.style.backgroundColor="blue"
+                a.style.height="100px";
+                a.style.width="100px";
+            }
+            else{
+                 document.body.style.backgroundColor="white";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+    <!-- <style>
+      .box {
+        display: grid;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-columns: 100px 100px 100px;
+        /* gap: 20px 20px; */
+        justify-content: center;
+      }
+      .item {
+        border: 2px black solid;
+        background-color: red;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+       border-radius: 50%;
+      }
+      .item1{
+        /* grid-row-start: 1;
+        grid-row-end: 3; */
+      }
+      @keyframes example {
+        from {
+          background-color: rgb(255, 255, 255);
+        }
+        to {
+          background-color: rgb(0, 0, 0);
+        }
+      }
+      /* .container{
+            display: flex;
+            gap: 20px;
+         }
+         .b1,.b2{   
+            width: 100px;
+            height: 100px;
+            border: 2px black solid;
+         } */
+    </style> -->
+  </head>
+  <body>
+    <div class="box">
+      <div class="item1"><input type="text" id="op" placeholder="0"></div>
+      <div class="item">%</div>
+      <div class="remove">AC</div>
+      <div class="pop">C</div>
+      <div class="item">delete</div>
+      <div class="item">1/x</div>
+      <div class="item">x<sup>2</sup></div>
+      <div class="item">rootx</div>
+      <div class="item"><sup>÷</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">×</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">-</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">+</div>
+      <div class="item">0</div>
+      <div class="item">00</div>
+      <div class="item">.</div>
+      <div class="ans">=</div>
+    </div>
+    <!-- <script src="gridcalcu.js"></script> -->
+     <script>
+      let buttons=document.querySelectorAll(".item");
+      console.log(buttons);
+
+      buttons.forEach((button)=>{
+        button.addEventListener("click",()=>{
+            document.getElementById("op").value= document.getElementById("op").value+button.textContent;
+            console.log(document.getElementById("op").value);
+        });
+      });
+
+      let evaluate=document.getElementsByClassName("ans");
+      evaluate[0].addEventListener("click",()=>{
+          document.getElementById("op").value=eval(document.getElementById("op").value);
+      })
+      let removes=document.querySelector(".remove");
+      removes.addEventListener("click",()=>{
+        document.getElementById("op").value="";
+      })
+
+     </script>
+  </body>
+</html>

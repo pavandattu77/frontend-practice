@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">button</button>
+    <script>
+        const btn=document.getElementById("btn");
+       
+        btn.addEventListener("click",()=>{
+           document.body.style.backgroundColor="red";
+        })
+        btn.addEventListener("mousedown",()=>{
+
+           document.body.style.backgroundColor="green";
+
+        })
+
+    btn.addEventListener("dblclick",()=>{
+        document.body.style.backgroundColor="aqua";
+    })
+   
+    btn.addEventListener("mouseover",()=>{
+        document.body.style.backgroundColor="orange";
+    })
+    btn.addEventListener("mouseout",()=>{
+        document.body.style.backgroundColor="black";
+    })
+    btn.addEventListener("focus",()=>{
+        document.body.style.backgroundColor="2px solid blue";
+    })
+    btn.addEventListener("mouseleave",()=>{
+        document.body.style.backgroundColor="yellow";
+    })
+    </script>
+</body>
+</html>\

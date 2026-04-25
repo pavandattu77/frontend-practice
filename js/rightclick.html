@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            color: rgb(6, 139, 255);
+            background-color: aquamarine;
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Right-Click example using contextMenu</h2>
+    <div id="box">Right-click inside this box</div>
+    <script>
+        const box=document.getElementById("box");
+        box.addEventListener("contextmenu", function(event){
+            event.preventDefault(); // to prevent default right-click properties 
+            alert("Right-click detected on the box!");
+            console.log("Right-click detected on the box!");
+            a=document.createElement("")
+        });
+        box.addEventListener("click", function(event){
+            console.log("Left-click detected on the box!");
+             document.body.style.backgroundColor="red";
+        });
+        box.addEventListener("dblclick", function(event){
+            console.log("Double-click detected on the box!");
+             document.body.style.backgroundColor="blue";
+        });
+        // box.addEventListener("mousedown", function(event){
+        //     console.log("Mouse down detected on the box!");
+        //      document.body.style.backgroundColor="red";
+        // });
+        // box.addEventListener("mouseup", function(event){
+        //     console.log("Mouse up detected on the box!");
+        // });
+        // box.addEventListener("mousemove", function(event){
+        //     console.log("Mouse move detected on the box!");
+        // });
+        // box.addEventListener("mouseover", function(event){
+        //     console.log("Mouse over detected on the box!");
+        // });
+    </script>
+</body>
+</html>

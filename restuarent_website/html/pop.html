@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CookGuide - Your Ultimate Culinary Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 14px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ff6347;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            padding: 20px 0;
+        }
+
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-section ul li {
+            background-color: #FFE5B4;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-section ul li img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .menu-section ul li:hover {
+            background-color: #ff6347;
+            color: white;
+        }
+
+        .hidden-content {
+            display: none;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .hidden-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .hidden-content ul li {
+            margin-bottom: 5px;
+        }
+
+        .rating-section,
+        .best-section,
+        .branches-section {
+            text-align: center;
+        }
+
+        .rating-section img {
+            width: 100px;
+            margin: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CookGuide - Your Ultimate Culinary Experience</h1>
+        <p>Explore the world of flavors with us!</p>
+    </header>
+
+    <nav>
+       <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="breakfast.html">Breakfast</a></li>
+            <li><a href="lunch.html">Lunch</a></li>
+            <li><a href="dinner.html">Dinner</a></li>
+            <li><a href="desserts.html">Desserts</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+        <ul>
+            <li><a href="#chef">Our Chefs</a></li>
+            <li><a href="#menu">Menu</a></li>
+           
+
+            <li><a href="#branches">Our Branches</a></li>
+            <li><a href="#partners">Available On</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Menu Section with Hidden Slides -->
+        <section id="menu" class="section menu-section">
+            <h2>Our Menu</h2>
+            <ul>
+                <li onclick="toggleContent('breakfast-content')">
+                    <img src="../img/breakfast.jpg" alt="Breakfast">
+                    <span><strong>Breakfast:</strong> Pancakes, Omelettes, Smoothies</span>
+                    <span>▼</span>
+                </li>
+                <div id="breakfast-content" class="hidden-content">
+                    <ul>
+                        <li>French Toast</li>
+                        <li>Avocado Toast</li>
+                        <li>Scrambled Eggs</li>
+                    </ul>
+                </div>
+
+                <li onclick="toggleContent('starters-content')">
+                    <img src="../img/starters.jpg" alt="Starters">
+                    <span><strong>Starters:</strong> Garlic Bread, Soup, Spring Rolls</span>
+                    <span>▼</span>
+                </li>
+                <div id="starters-content" class="hidden-content">
+                    <ul>
+                        <li>Bruschetta</li>
+                        <li>Mozzarella Sticks</li>
+                        <li>Chicken Wings</li>
+                    </ul>
+                </div>
+
+                <li onclick="toggleContent('maincourse-content')">
+                    <img src="../img/maincourse.jpg" alt="Main Course">
+                    <span><strong>Main Course:</strong> Pasta, Grilled Chicken, Vegan Bowls</span>
+                    <span>▼</span>
+                </li>
+                <div id="maincourse-content" class="hidden-content">
+                    <ul>
+                        <li>Spaghetti Carbonara</li>
+                        <li>Grilled Salmon</li>
+                        <li>Quinoa Buddha Bowl</li>
+                    </ul>
+                </div>
+
+                <li onclick="toggleContent('snacks-content')">
+                    <img src="../img/snacks.jpg" alt="Snacks">
+                    <span><strong>Snacks:</strong> French Fries, Chicken Wings, Nachos</span>
+                    <span>▼</span>
+                </li>
+                <div id="snacks-content" class="hidden-content">
+                    <ul>
+                        <li>Onion Rings</li>
+                        <li>Sweet Potato Fries</li>
+                        <li>Buffalo Wings</li>
+                    </ul>
+                </div>
+
+                <li onclick="toggleContent('salads-content')">
+                    <img src="../img/salads.jpg" alt="Salads">
+                    <span><strong>Salads:</strong> Caesar Salad, Greek Salad, Quinoa Salad</span>
+                    <span>▼</span>
+                </li>
+                <div id="salads-content" class="hidden-content">
+                    <ul>
+                        <li>Cobb Salad</li>
+                        <li>Caprese Salad</li>
+                        <li>Kale and Avocado Salad</li>
+                    </ul>
+                </div>
+
+                <li onclick="toggleContent('juice-content')">
+                    <img src="../img/juice.jpg" alt="Juice">
+                    <span><strong>Juice:</strong> Fresh Orange Juice, Apple Juice, Smoothies</span>
+                    <span>▼</span>
+                </li>
+                <div id="juice-content" class="hidden-content">
+                    <ul>
+                        <li>Carrot and Ginger Juice</li>
+                        <li>Mixed Berry Smoothie</li>
+                        <li>Green Detox Juice</li>
+                    </ul>
+                </div>
+
+                <li onclick="toggleContent('desserts-content')">
+                    <img src="../img/desserts.jpg" alt="Desserts">
+                    <span><strong>Desserts:</strong> Cheesecake, Brownies, Fruit Tart</span>
+                    <span>▼</span>
+                </li>
+                <div id="desserts-content" class="hidden-content">
+                    <ul>
+                        <li>Tiramisu</li>
+                        <li>Chocolate Lava Cake</li>
+                        <li>Fruit Parfait</li>
+                    </ul>
+                </div>
+            </ul>
+        </section>
+
+        <script>
+            function toggleContent(id) {
+                var content = document.getElementById(id);
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        </script>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CookGuide | Available on <a href="#">Zomato</a>, <a href="#">Swiggy</a>, and <a href="#">Uber Eats</a></p>
+    </footer>
+
+</body>
+
+</html>

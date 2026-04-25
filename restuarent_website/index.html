@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CookGuide - Your Ultimate Culinary Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#f7f7f7;
+        }
+
+        header {
+            background-color:  #ff6347 ;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color:   #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 14px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #ff6347;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            padding: 20px 0;
+        }
+
+        .chef-section {
+            overflow: hidden;
+        }
+
+        .chef-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .chef-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .chef-item p {
+            flex: 1;
+        }
+
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+          .menu-section ul li {
+            background-color: #FFE5B4;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .menu-section ul li img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .menu-section ul li:hover {
+            background-color:#bf9b42;
+            color: white;
+        }
+
+        .rating-section,
+        .best-section,
+        .branches-section {
+            text-align: center;
+        }
+
+        .rating-section img {
+            width: 100px;
+            margin: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Soul Society Bistro - Your Ultimate Culinary Experience</h1>  
+        <p>Explore the world of flavors with us!</p>
+    </header>
+
+    <nav>
+        <ul>
+        <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./html/breakfast.html">Breakfast</a></li>
+            <li><a href="./html/lunch.html">Lunch</a></li>
+            <li><a href="./html/dinner.html">Dinner</a></li>
+            <li><a href="./html/desserts.html">Desserts</a></li>
+            <li><a href="./html/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+            <li><a href="#chef">Our Chefs</a></li>
+            <li><a href="./html/pop.html">Menu</a></li>
+            
+            <li><a href="#branches">Our Branches</a></li>
+            <li><a href="#partners">Available On</a></li>
+     
+
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <!-- Important Chefs Section -->
+        <section id="chef" class="section chef-section">
+            <h2>Meet Our Chefs</h2>
+            <div class="chef-item">
+                <img src="./img/chef1.jpg" alt="Chef John Doe">
+                <p><strong>Chef Carmy Berzatto</strong>: A culinary expert with over 20 years of experience in fusion cuisine. He is not only a creator but also a leader and a mentor, inspiring their team to reach new heights and fostering a collaborative environment where creativity flourishes."I have worked in the best restaurants in the world. And I have been the best. But I was never myself."</p>
+                                                                  <p> ~by Carmy Berzatto</p> <img src="./img/u24.jpg" alt="Chef Jane Smith">
+
+            </div>
+            <div class="chef-item">
+                <img src="./img/chef2.jpg" alt="Chef Jane Smith">
+                <p><strong>Chef Vinsmoke Sanji</strong>: A cooking artist known for his delicate balance of flavors. The chef epitomizes the pinnacle of culinary excellence, blending artistry with technical mastery to create unforgettable dining experiences."Don't start a fight you can't finish. But if you're gonna fight, fight to win.Of course in Cooking"</p><p>~by Vinsmoke Sanji</p>
+            </div>
+            <div class="chef-item">
+                <img src="./img/chef3.jpg" alt="Chef Carlos Rivera">
+                <p><strong>Chef Carlos Rivera</strong>: A specialist in Latin American and Mediterranean cuisine.With a discerning palate and an innovative approach, he craft dishes that push the boundaries of traditional cuisine while respecting time-honored techniques. Every creation is meticulously designed to offer a harmonious balance of taste, texture, and visual appeal."I always believe in myself and say the same to my junior chef's"</p><p>~by Carlos Rivera</p>
+            </div>
+        </section>
+   <table>
+           <tr>
+    <td style="padding-right: 20px;"><video src="./img/daddr.mp4" controls width="300"></video></td>
+    <td><video src="./img/crt.mp4" controls width="300"></video></td>
+</tr>
+  </table>
+
+        <!-- Menu Section -->
+        <section id="menu" class="section menu-section">
+            <h2>Our Menu</h2>
+            <ul>
+                <li><img src="./img/breakfast.jpg" alt="Breakfast"><strong>Breakfast:</strong> Pancakes, Omelettes, Smoothies</li>
+                <li><img src="./img/starters.jpg" alt="Starters"><strong>Starters:</strong> Garlic Bread, Soup, Spring Rolls</li>
+                <li><img src="./img/maincourse.jpg" alt="Main Course"><strong>Main Course:</strong> Pasta, Grilled Chicken, Vegan Bowls</li>
+                <li><img src="./img/snacks.jpg" alt="Snacks"><strong>Snacks:</strong> French Fries, Chicken Wings, Nachos</li>
+                <li><img src="./img/salads.jpg" alt="Salads"><strong>Salads:</strong> Caesar Salad, Greek Salad, Quinoa Salad</li>
+                <li><img src="./img/juice.jpg" alt="Juice"><strong>Juice:</strong> Fresh Orange Juice, Apple Juice, Smoothies</li>
+                <li><img src="./img/desserts.jpg" alt="Desserts"><strong>Desserts:</strong> Cheesecake, Brownies, Fruit Tart</li>
+
+
+
+
+            </ul>
+        </section>
+         <h2>Suggetions by our chef's</h2>
+          <p><strong>Chef Carmy Berzatto</strong>: Pasta Carbonara, Seasonal Vegetable Risotto</p> 
+
+<div class="chef-item">
+
+<img src="./img/chef1s.jpg" alt=" Seasonal Vegetable Risotto">
+            <p>Seasonal Vegetable Risotto is a creamy, decadent dish that bursts with the vibrant flavors of freshly harvested vegetables. Imagine tender, al dente Arborio rice cooked slowly in a rich vegetable broth, absorbing every bit of its savory goodness. A colorful medley of the season’s best vegetables—like sweet roasted butternut squash, earthy mushrooms, crisp asparagus, and vibrant peas—are folded into the risotto, each bite offering a unique texture and taste. The dish is finished with a sprinkle of sharp Parmesan cheese, fresh herbs, and a drizzle of olive oil, bringing out the dish’s velvety richness and bright, natural flavors. Perfectly comforting and deliciously light, this risotto is a celebration of nature’s bounty. </p>
+</div>
+
+          <p><strong>Chef Vinsmoke Sanji</strong>: Seafood Curry, Tempura </p>
+<div class="chef-item">
+ <img src="./img/chef2s.jpg" alt=" Seasonal Vegetable Risotto">
+<p> Tempura is a delicate Japanese dish that brings together crispiness and flavor in perfect harmony. Imagine fresh shrimp, vegetables, or fish lightly dipped in a feather-light batter and then flash-fried to golden perfection. Each bite offers an airy crunch, revealing the succulent, tender interior. The tempura is served piping hot, with a side of savory dipping sauce made from soy, dashi, and mirin that enhances its umami goodness. Accompanied by grated daikon and a hint of ginger, the dish’s balance of texture and subtle flavor makes it an irresistible indulgence, light yet incredibly satisfying.</p>
+</div>
+
+          <p><strong>Chef Carlos Rivera</strong>: Arroz con Pollo, Ceviche, Paella</p> 
+<div class="chef-item">
+<img src="./img/chef3s.jpg" alt=" Seasonal Vegetable Risotto">
+<p>Arroz con Pollo is a vibrant, flavor-packed dish that combines tender chicken and perfectly seasoned rice into a heartwarming, comforting meal. The chicken is first seared to golden perfection, locking in its juices, then simmered with fragrant garlic, onions, and bell peppers. As the rice slowly cooks, it absorbs a rich blend of spices like cumin, saffron, and smoked paprika, infusing every grain with deep, earthy warmth. Finished with a sprinkle of fresh cilantro and a squeeze of lime, each bite is a satisfying harmony of savory, smoky, and zesty flavors, making Arroz con Pollo the ultimate comfort food. </p>
+</div>
+        <!-- Why We Are Best Section -->
+        <section id="best" class="section best-section">
+            <h2>Why We Are Best</h2>
+            <p>"At CookGuide, we pride ourselves on delivering the finest culinary experiences.Excellence isn't just a standard; it's our passion. We don’t just serve food; we craft unforgettable experiences, where every detail is meticulously perfected to delight your senses and elevate your dining journey."
+
+</p> <img src="./img/ntr.jpg" width="1200" height="600"> <h2>A Culinary Delight: NTR's Review of CookGuide</h2><p>I had the privilege of dining at CookGuide last evening, and let me start by saying, it was an experience to remember. As someone who appreciates fine cuisine, I was thoroughly impressed by the incredible flavors, the warm hospitality, and the passion behind every dish served at this remarkable restaurant.
+From the moment I walked in, I was struck by the vibrant yet cozy atmosphere, a perfect blend of elegance and comfort. The staff greeted me with a smile and made sure I felt at home right away. But what truly stood out was the food – it was nothing short of extraordinary. </p>
+
+<img src="./img/srad.jpg" width="600" height="1200"> <h2>A Culinary Delight: Shraddha Kapoor’s Review of CookGuide</h2><p>The main course was a revelation. I opted for the Seasonal Vegetable Risotto, and it was divine! Creamy, rich, and packed with fresh, colorful vegetables – it felt like I was tasting nature’s bounty in every spoonful. The dish was crafted with so much love and attention to detail; it’s clear that the chefs here are passionate about what they do.
+
+To end the meal on a sweet note, I indulged in their signature dessert. The balance of flavors, the perfect sweetness, and the artistic presentation left me speechless. It was one of the best desserts I’ve had in a long time.</p>
+
+<img src="./img/crc.jpg" width="800" height="600"> <h2>Welcome the Champions: A Special Visit from the Indian Cricket Team</h2>
+<p>At CookGuide, we had the incredible honor of hosting the Indian cricket team, a moment that left our kitchen and our hearts brimming with excitement! With their love for food and teamwork, the team enjoyed a curated dining experience featuring the best of Indian and global cuisine, prepared with love and perfection.A Meal Fit for Champions
+Our kitchen team made sure every dish represented not just taste but the passion we pour into our food. We were thrilled to see the smiles and satisfaction on the faces of our nation’s heroes!</p>
+
+
+            <strong>"Our team innovates continuously to offer a memorable dining experience."</strong>
+        </section>
+         
+        <!-- Our Branches Section -->
+        <section id="branches" class="section branches-section">
+            <h2>Our Branches</h2>
+            <p>Visit our branches at Manhattan, New York; Beverly Hills, California; Downtown, Chicago; Miami Beach, Florida.</p>
+        </section>
+
+    <marquee ><font color="sky blue" size="6" font="Corbel">
+                            "Where every bite tells a story of excellence."
+                        </marquee></font>
+         <marquee >
+                            <img src="./img/18.jpg" width="400" height="200" />
+                        </marquee>
+
+        <!-- Available On Zomato, Swiggy, Uber Eats -->
+        <section id="partners" class="section">
+            <h2>Available On</h2>
+            <p>Order our meals through Zomato, Swiggy, or Uber Eats.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CookGuide | Available on <a href="#">Zomato</a>, <a href="#">Swiggy</a>, and <a href="#">Uber Eats</a></p>
+    </footer>
+
+</body>
+
+</html>

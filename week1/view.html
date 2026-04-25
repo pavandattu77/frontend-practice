@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop - HealthFirst Pharmacy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px;
+        }
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 200px;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+       
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .product-price {
+            color: #388e3c;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+        .btn-buy {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <h2>Shop Our Products</h2>
+    <div class="product-list">
+        
+        <div class="product">
+            <img src="dolo.png" alt="Dolo 650">
+            <div class="product-name">Dolo 650</div>
+            <div class="product-price">$5.99</div>
+            <button class="btn-buy" onclick="alert('Dolo 650 added to cart!')">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="vitamin_c.png" alt="Vitamin C">
+            <div class="product-name">Vitamin C Tablets</div>
+            <div class="product-price">$12.99</div>
+            <button class="btn-buy" onclick="alert('Vitamin C Tablets added to cart!')">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="paracetamol.png" alt="Paracetamol">
+            <div class="product-name">Paracetamol 500mg</div>
+            <div class="product-price">$4.50</div>
+            <button class="btn-buy" onclick="alert('Paracetamol added to cart!')">Add to Cart</button>
+        </div>
+        
+        <div class="product">
+            <img src="band_aid.png" alt="Band Aid">
+            <div class="product-name">Band Aid Pack</div>
+            <div class="product-price">$3.00</div>
+            <button class="btn-buy" onclick="alert('Band Aid Pack added to cart!')">Add to Cart</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

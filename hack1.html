@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML & CSS Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .quiz-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .options label {
+      display: block;
+      margin: 8px 0;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .options input[type="radio"] {
+      display: none;
+    }
+
+    .options input[type="radio"]:checked + span {
+      background: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      display: block;
+      padding: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-box">
+    <h2 id="question">Question text here</h2>
+    <form id="options" class="options"></form>
+    <button id="nextBtn">Next</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "What does HTML stand for?",
+        options: ["Hyper Text Markup Language", "Hot Mail Tool Language", "Hyperlink Text Machine Language", "None of the above"],
+        answer: 0
+      },
+      {
+        question: "Which HTML tag is used to define a paragraph?",
+        options: ["<p>", "<div>", "<span>", "<section>"],
+        answer: 0
+      },
+      {
+        question: "What does CSS stand for?",
+        options: ["Color Style Sheets", "Cascading Style Sheets", "Creative Style Syntax", "Computer Style System"],
+        answer: 1
+      },
+      {
+        question: "Which property changes the text color in CSS?",
+        options: ["font-color", "text-style", "color", "text-color"],
+        answer: 2
+      },
+      {
+        question: "Which tag links a CSS file to HTML?",
+        options: ["<style>", "<css>", "<link>", "<script>"],
+        answer: 2
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("nextBtn");
+    const resultEl = document.getElementById("result");
+
+    function loadQuestion() {
+      const q = questions[current];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "option";
+        input.value = idx;
+
+        const span = document.createElement("span");
+        span.textContent = opt;
+
+        label.appendChild(input);
+        label.appendChild(span);
+        optionsEl.appendChild(label);
+      });
+    }
+
+    function showResult() {
+      const percent = (score / questions.length) * 100;
+      resultEl.textContent = `You scored ${score}/${questions.length} (${percent}%)`;
+      nextBtn.style.display = "none";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (!selected) {
+        alert("Please select an answer");
+        return;
+      }
+
+      const answer = parseInt(selected.value);
+      if (answer === questions[current].answer) score++;
+
+      current++;
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>

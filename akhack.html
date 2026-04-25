@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            width: 98vw;
+            max-width: 900px;
+            margin: 30px auto 20px auto;
+            border: 2px solid #0e7c7b;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            border-radius: 24px;
+            padding: 24px 18px 18px 18px;
+        }
+        .question-block {
+            background: #e0f7fa;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin-bottom: 18px;
+            padding: 18px 14px 10px 14px;
+            border: 1px solid #b2ebf2;
+            transition: box-shadow 0.2s;
+        }
+        .question-block:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+        }
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .timer {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #0e7c7b;
+            background: #fff3e0;
+            padding: 3px 12px;
+            border-radius: 12px;
+            border: 1px solid #ffe0b2;
+        }
+        .submit-btn {
+            background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 7px 22px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(67,206,162,0.13);
+            transition: background 0.2s, transform 0.1s;
+        }
+        .submit-btn:disabled {
+            background: #bdbdbd;
+            color: #fff;
+            cursor: not-allowed;
+        }
+        .submit-btn:hover:not(:disabled) {
+            background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        label {
+            margin-left: 10px;
+            display: block;
+            font-size: 1.08em;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+        label p {
+            display: inline;
+            margin: 0;
+            padding: 0 2px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #185a9d;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 1px 2px 8px #b2ebf2;
+        }
+        .bg {
+            margin-bottom: 0;
+        }
+        .question-block p:first-of-type {
+            font-weight: 600;
+            color: #0e7c7b;
+            font-size: 1.13em;
+        }
+        #scores {
+            padding-left: 18px;
+        }
+        #leaderboard {
+            margin: 18px 0 0 0;
+            padding: 14px 18px;
+            background: #fffde7;
+            border-radius: 12px;
+            border: 1px solid #ffe082;
+            box-shadow: 0 2px 8px rgba(255,193,7,0.08);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #leaderboard h3 {
+            color: #ff9800;
+            margin-top: 0;
+        }
+        #username {
+            border: 1px solid #b2ebf2;
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 1em;
+            margin-top: 8px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 8px 2vw;
+            }
+            .question-block {
+                padding: 10px 4px 8px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bg"><h1>QUIZ</h1></div><hr>
+        <div class="a1 question-block" data-index="0">
+           <div class="question-header">
+               <span class="timer" id="timer0">Time left: 180s</span>
+           </div>
+           <p> 1.Who is the prime minister of india..?</p>
+           <label><p><input type="radio" name="quiz">A.Trump</p></label>
+           <label><p id="b1"><input type="radio" name="quiz">B.Modi</label></p></label>
+           <label><p><input type="radio" name="quiz">C.Raman</label></p></label>
+           <label><p><input type="radio" name="quiz">D.Murmur</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="0">Submit</button></div>
+        </div><hr>
+        <div class="a2 question-block" data-index="1">
+           <div class="question-header">
+               <span class="timer" id="timer1">Time left: 180s</span>
+           </div>
+           <p> 2.Capital city of india..?</p>
+           <label><p id="b2"><input type="radio" name="quiz1">A.Delhi</p></label>
+           <label><p><input type="radio" name="quiz1">B.Hyderabad</label></p></label>
+           <label><p><input type="radio" name="quiz1">C.Amaravati</label></p></label>
+           <label><p><input type="radio" name="quiz1">D.Chennai</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="1">Submit</button></div>
+        </div><hr>
+        
+        <div class="a3 question-block" data-index="2">
+           <div class="question-header">
+               <span class="timer" id="timer2">Time left: 180s</span>
+           </div>
+           <p> 3.Who is the 14th president of india..?</p>
+           <label><p><input type="radio" name="quiz2">A.Sarvepally Radhakrishna</p></label>
+           <label><p><input type="radio" name="quiz2">B.Modi</label></p></label>
+           <label><p id="b3"><input type="radio" name="quiz2">C.APJ Abdul kalam</label></p></label>
+           <label><p><input type="radio" name="quiz2">D.Bagadth singh</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="2">Submit</button></div>
+        </div><hr>
+        
+        <div class="a4 question-block" data-index="3">
+           <div class="question-header">
+               <span class="timer" id="timer3">Time left: 180s</span>
+           </div>
+           <p> 4.Find the river name..?</p>
+           <label><p><input type="radio" name="quiz3">A.Ranga</p></label>
+           <label><p id="b4"><input type="radio" name="quiz3">B.Ganga</label></p></label>
+           <label><p><input type="radio" name="quiz3">C.Manga</label></p></label>
+           <label><p><input type="radio" name="quiz3">D.Konga</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="3">Submit</button></div>
+        </div><hr>
+        
+        <div class="a5 question-block" data-index="4">
+           <div class="question-header">
+               <span class="timer" id="timer4">Time left: 180s</span>
+           </div>
+           <p> 5.Which is not a state in India..?</p>
+           <label><p id="b5"><input type="radio" name="quiz4">A.Los Angeles</p></label>
+           <label><p><input type="radio" name="quiz4">B.Telangana</label></p></label>
+           <label><p><input type="radio" name="quiz4">C.Andhra</label></p></label>
+           <label><p><input type="radio" name="quiz4">D.Tamilnadu</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="4">Submit</button></div>
+        </div><hr>
+        
+        <div class="a6 question-block" data-index="5">
+           <div class="question-header">
+               <span class="timer" id="timer5">Time left: 180s</span>
+           </div>
+           <p> 6.Telangana population..?</p>
+           <label><p><input type="radio" name="quiz5">A.5crore</p></label>
+           <label><p><input type="radio" name="quiz5">B.8crore</label></p></label>
+           <label><p id="b6"><input type="radio" name="quiz5">C.7crore</label></p></label>
+           <label><p><input type="radio" name="quiz5">D.10crore</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="5">Submit</button></div>
+        </div><hr>
+        
+        <div class="a7 question-block" data-index="6">
+           <div class="question-header">
+               <span class="timer" id="timer6">Time left: 180s</span>
+           </div>
+           <p> 7.Name of Airline..?</p>
+           <label><p><input type="radio" name="quiz6">A.India</p></label>
+           <label><p><input type="radio" name="quiz6">B.Hi India</label></p></label>
+           <label><p><input type="radio" name="quiz6">C.Sea India</label></p></label>
+           <label><p id="b7"><input type="radio" name="quiz6">D.Air India</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="6">Submit</button></div>
+        </div><hr>
+       
+        <div class="a8 question-block" data-index="7">
+           <div class="question-header">
+               <span class="timer" id="timer7">Time left: 180s</span>
+           </div>
+           <p> 8.Island name..?</p>
+           <label><p><input type="radio" name="quiz7">A.Africa</p></label>
+           <label><p><input type="radio" name="quiz7">B.Australia</label></p></label>
+           <label><p id="b8"><input type="radio" name="quiz7">C.Andaman Nicobar</label></p></label>
+           <label><p><input type="radio" name="quiz7">D.Ponducherry</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="7">Submit</button></div>
+        </div><hr>
+        
+        <div class="a9 question-block" data-index="8">
+           <div class="question-header">
+               <span class="timer" id="timer8">Time left: 180s</span>
+           </div>
+           <p> 9.USA Currency Name..?</p>
+           <label><p id="b9"><input type="radio" name="quiz8">A.Doller</p></label>
+           <label><p><input type="radio" name="quiz8">B.Rupee</label></p></label>
+           <label><p><input type="radio" name="quiz8">C.Euro</label></p></label>
+           <label><p><input type="radio" name="quiz8">D.Dinar</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="8">Submit</button></div>
+        </div><hr>
+      
+        <div class="a10 question-block" data-index="9">
+           <div class="question-header">
+               <span class="timer" id="timer9">Time left: 180s</span>
+           </div>
+           <p> 10.Head of Banks in India..?</p>
+           <label><p><input type="radio" name="quiz9">A.SBI</p></label>
+           <label><p><input type="radio" name="quiz9">B.HDFC</label></p></label>
+           <label><p><input type="radio" name="quiz9">C.UNION</label></p></label>
+           <label><p id="b10"><input type="radio" name="quiz9">D.Reserve Bank</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="9">Submit</button></div>
+        </div><hr>
+       
+        <div class="a11 question-block" data-index="10">
+           <div class="question-header">
+               <span class="timer" id="timer10">Time left: 180s</span>
+           </div>
+           <p> 11.Which is not a Continent..?</p>
+           <label><p><input type="radio" name="quiz10">A.Asia</p></label>
+           <label><p><input type="radio" name="quiz10">B.Africa</label></p></label>
+           <label><p><input type="radio" name="quiz10">C.North America</label></p></label>
+           <label><p id="b11"><input type="radio" name="quiz10">D.Russia</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="10">Submit</button></div>
+        </div><hr>
+       
+        <div class="a12 question-block" data-index="11">
+           <div class="question-header">
+               <span class="timer" id="timer11">Time left: 180s</span>
+           </div>
+           <p> 12.Beach Name..?</p>
+           <label><p id="b12"><input type="radio" name="quiz11">A.Ponducherry</p></label>
+           <label><p><input type="radio" name="quiz11">B.Tipupati</label></p></label>
+           <label><p><input type="radio" name="quiz11">C.Himalaya</label></p></label>
+           <label><p><input type="radio" name="quiz11">D.Amazon</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="11">Submit</button></div>
+        </div><hr>
+        
+        <div class="a13 question-block" data-index="12">
+           <div class="question-header">
+               <span class="timer" id="timer12">Time left: 180s</span>
+           </div>
+           <p> 13.Highest mountain name..?</p>
+           <label><p><input type="radio" name="quiz12">A.Shimla</p></label>
+           <label><p><input type="radio" name="quiz12">B.Himalaya</label></p></label>
+           <label><p id="b13"><input type="radio" name="quiz12">C.Himadri</label></p></label>
+           <label><p><input type="radio" name="quiz12">D.Hina</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="12">Submit</button></div>
+        </div><hr>
+        
+        <div class="a14 question-block" data-index="13">
+           <div class="question-header">
+               <span class="timer" id="timer13">Time left: 180s</span>
+           </div>
+           <p> 14.Rainbow colors..?</p>
+           <label><p><input type="radio" name="quiz13">A.8</p></label>
+           <label><p><input type="radio" name="quiz13">B.9</label></p></label>
+           <label><p><input type="radio" name="quiz13">C.12</label></p></label>
+           <label><p id="b14"><input type="radio" name="quiz13">D.7</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="13">Submit</button></div>
+        </div><hr>
+        
+        <div class="a15 question-block" data-index="14">
+           <div class="question-header">
+               <span class="timer" id="timer14">Time left: 180s</span>
+           </div>
+           <p> 15.HTML Abbrivation..?</p>
+           <label><p id="b15"><input type="radio" name="quiz14">A.Hyper Text Markup Language</p></label>
+           <label><p><input type="radio" name="quiz14">B.Hyper Text Makeup Language</label></p></label>
+           <label><p><input type="radio" name="quiz14">C.Higher Text markup Language</label></p></label>
+           <label><p><input type="radio" name="quiz14">D.Hyper Tech markup Language</label></p></label>
+           <div style="text-align:right;margin-top:8px;"><button class="submit-btn" data-index="14">Submit</button></div>
+        </div>
+    </div>
+<div style="margin:15px 0; padding:10px; background:#fff; border-radius:8px;">
+  <h3>Leaderboard</h3>
+  <ol id="scores"></ol>
+</div>
+<div>
+  Name: <input type="text" id="username" placeholder="Enter your name" style="margin-right:10px;">
+</div>
+<script>
+const totalQuestions = 15;
+const questionTimers = [];
+const questionIntervals = [];
+const submittedQuestions = new Set();
+
+function startQuestionTimer(index) {
+  let timeLeft = 180;
+  const timerSpan = document.getElementById(timer${index});
+  timerSpan.textContent = Time left: ${timeLeft}s;
+
+  questionIntervals[index] = setInterval(() => {
+    timeLeft--;
+    timerSpan.textContent = Time left: ${timeLeft}s;
+    if (timeLeft <= 0) {
+      clearInterval(questionIntervals[index]);
+      if (!submittedQuestions.has(index)) {
+        submitSingleQuestion(index);
+        
+        if (submittedQuestions.size === totalQuestions) {
+          setTimeout(showFinalScoreAlert, 200); 
+        }
+      }
+    }
+  }, 1000);
+}
+
+function submitSingleQuestion(index) {
+  if (submittedQuestions.has(index)) return;
+  submittedQuestions.add(index);
+
+  clearInterval(questionIntervals[index]);
+
+  const correctIds = [
+    "b1","b2","b3","b4","b5",
+    "b6","b7","b8","b9","b10",
+    "b11","b12","b13","b14","b15"
+  ];
+  const correctId = correctIds[index];
+
+  let answeredWrong = false;
+  let answered = false;
+  const radios = document.getElementsByName("quiz" + (index === 0 ? "" : index));
+  radios.forEach(radio => {
+    const p = radio.parentElement;
+    if (radio.checked) {
+      answered = true;
+      if (p.id === correctId) {
+        p.style.color = "green";
+      } else {
+        p.style.color = "red";
+        answeredWrong = true;
+      }
+    }
+    radio.disabled = true;
+  });
+
+
+  if (!answered || answeredWrong) {
+    const correctP = document.getElementById(correctId);
+    if (correctP) correctP.style.color = "green";
+  }
+
+  const btn = document.querySelector(.submit-btn[data-index='${index}']);
+  btn.disabled = true;
+  if (submittedQuestions.size === totalQuestions) {
+    setTimeout(showFinalScoreAlert, 200); 
+  }
+}
+
+function showFinalScoreAlert() {
+  let score = 0;
+  const correctIds = [
+    "b1","b2","b3","b4","b5",
+    "b6","b7","b8","b9","b10",
+    "b11","b12","b13","b14","b15"
+  ];
+  for (let i = 0; i < totalQuestions; i++) {
+    const radios = document.getElementsByName("quiz" + (i === 0 ? "" : i));
+    radios.forEach(radio => {
+      const p = radio.parentElement;
+      if (radio.checked && p.id === correctIds[i]) {
+        score++;
+      }
+    });
+  }
+  let username = document.getElementById("username").value.trim() || "User";
+  alert(`${username}, your total score: ${score}/${totalQuestions}`);
+}
+
+
+document.querySelectorAll(".submit-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const index = parseInt(btn.getAttribute("data-index"));
+    submitSingleQuestion(index);
+  });
+});
+
+
+window.onload = function() {
+  for(let i=0; i<totalQuestions; i++) {
+    startQuestionTimer(i);
+  }
+};
+
+</script>
+</body>
+</html>

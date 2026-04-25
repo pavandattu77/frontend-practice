@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        // JavaScript code to handle note creation, editing, deletion, and file attachments
+        document.getElementById('add-note').addEventListener('click', function() {
+            document.getElementById('note-editor').style.display = 'block';
+            document.getElementById('note-content').value = '';
+            document.getElementById('note-actions').style.display = 'none';
+        });
+
+        document.getElementById('save-note').addEventListener('click', function() {
+            const noteContent = document.getElementById('note-content').value;
+            if (noteContent) {
+                const noteList = document.getElementById('note-list');
+                const li = document.createElement('li');
+                li.textContent = noteContent;
+                li.addEventListener('click', function() {
+                    document.getElementById('note-content').value = noteContent;
+                    document.getElementById('note-editor').style.display = 'block';
+                    document.getElementById('note-actions').style.display = 'block';
+                });
+                noteList.appendChild(li);
+                document.getElementById('note-editor').style.display = 'none';
+            }
+        });
+
+        document.getElementById('cancel-edit').addEventListener('click', function() {
+            document.getElementById('note-editor').style.display = 'none';
+        });
+
+        document.getElementById('delete-note').addEventListener('click', function() {
+            const noteList = document.getElementById('note-list');
+            if (noteList.lastChild) {
+                noteList.removeChild(noteList.lastChild);
+            }
+            document.getElementById('note-editor').style.display = 'none';
+        });
+
+        // File upload functionality
+        document.getElementById('upload-files').addEventListener('click', function() {
+            const fileInput = document.getElementById('file-input');
+            const fileList = document.getElementById('file-list');
+            Array.from(fileInput.files).forEach(file => {
+                const li = document.createElement('li');
+                li.textContent = file.name;
+                fileList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

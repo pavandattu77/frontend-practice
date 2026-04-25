@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <style>
+    body {
+      background:greenyellow;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+table {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    width: 400px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+td {
+    padding: 20px;
+}
+
+
+
+    #log {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    #log:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <center>
+    <table>
+      <tr>
+        <td>
+          <h1>Login</h1>
+          <p>
+            Email/Username : 
+            <input type="text" id="email" name="email" placeholder="Enter your email/Username" required />
+          </p>
+          <p>
+            Password :   
+
+            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          </p>
+          <p>
+            <input id="log" type="submit" value="Login" />
+          </p>
+        </td>
+      </tr>
+    </table>
+    </center>
+  </form>
+</body>
+</html>

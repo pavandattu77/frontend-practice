@@ -1,0 +1,18 @@
+body {
+    background-color: #ffcc00;
+    font-family: Verdana;
+}
+h1 {
+    color: teal;
+}
+p {
+    font-size: 16px;
+    color: darkslategray;
+}
+h1.box{
+    width: 560px;
+    height: auto;
+    padding: 34px;
+    border: 2px solid #15130b;
+    background-color: aquamarine;
+}
